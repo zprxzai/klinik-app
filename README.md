@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## kLINIK App
+## KLINIK App
 Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien masuk klinik yang berisi:
 
 - halaman registrasi / pendaftaran
@@ -18,6 +18,6 @@ Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien m
 
 aplikasi ini masih di tahap pengembangan dan diusahakan untuk menambah konten terbaru.
 
-## Learning Laravel
+
 
 
