@@ -36,11 +36,20 @@
                                         </td>
                                         <td>{{ $item->jenis_kelamin }}</td>
                                         <td>{{ $item->umur }}</td>
-                                        <td>{{ $item->foto }}</td>
-                                        <td>{{ $item->alamat }}</td>
+                                        <?php $foto=$item->foto ? $item->foto : '0.png' ?>
+                                        <td><img src="/storage/images/{{ $foto }}" alt="0" width="100px" style="aspect-ratio:1/1"></td>                               
+                                       <td>{{ $item->alamat }}</td>
                                         <td>{{ $item->aksi }}
-                                            <a href='form-edit.php?id=".$siswa['id']."'>Edit</a> |
-                                            <a href='hapus.php? id=".$siswa['id']."' onclick='return confirm(\"apakah anda yakin?\")'>Hapus</a>
+                                            <a href="/pasien/{{ $item->id }}/edit" class="btn btn-warning btn-sm ml-2">
+                                                Edit
+                                            </a>
+                                            <form action="/pasien/{{ $item->id }}" method="post" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger btn-sm ml-2"
+                                                    onclick="return confirm('Yakin ingin menghapus data?')">
+                                                    Hapus
+                                                </button>
                                         </td>
 
                                     </tr>
