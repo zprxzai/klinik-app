@@ -7,14 +7,16 @@
 </p>
 
 ## KLINIK App
-Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien masuk klinik yang berisi:
-
+Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien masuk klinik dan sekarang di minggu sekarang kami sudah memiliki beberapa update konten sudah memiliki yang berisi:
+###  Fitur-fitur yang sudah ada
 - halaman registrasi / pendaftaran
 - halaman login untuk akun yang sudah dibuat
 - dashboard
 - data pasien
 - dll
-
+### fitur tambahan
+- menambah pasien
+- dalam menambah pasien kita juga dapat menambah foto
 aplikasi ini masih di tahap pengembangan dan diusahakan untuk menambah konten terbaru.
 
 
