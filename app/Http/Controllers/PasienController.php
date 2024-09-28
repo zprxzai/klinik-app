@@ -67,23 +67,46 @@ class PasienController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['pasien'] = \App\Models\Pasien::findOrFail($id);
+        return view('pasien_edit', $data);
+    
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        //
+{
+    $requestData = $request->validate([
+        'nama' => 'required|min:3',
+        'no_pasien' => 'required|unique:pasiens,no_pasien,' . $id,
+        'umur' => 'required',
+        'alamat' => 'nullable',
+        'jenis_kelamin' => 'required',
+        'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:10000',
+    ]);
+    $pasien = \App\Models\Pasien::findOrfail($id);
+    $pasien->fill($requestData);
+    if ($request->hasFile('foto')) {
+        // /Storage::delete($pasien->foto);
+        $pasien->foto = $request->file('foto')->store('public');
     }
+    $pasien->save();
+    return redirect('/pasien')->with('pesan', 'data sudah diupdate');
+}
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $pasien = \App\Models\Pasien::findOrFail($id);
+        $pasien->delete();
+        return back()->with('pesan', 'Data sudah dihapus');
     }
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/PSTS

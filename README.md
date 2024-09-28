@@ -1,4 +1,4 @@
-<div class="box"> <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a> <p>BY: Zaidan pasya </p><img src="resources/css/zai logo1.png" width="230px" height="200px"></p></div>
+<div class="box"> <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a> <p>BY: Zaidan pasya </p><img src="resources/css/zai logo1 (1).png" width="230px" height="200px"></p></div>
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
@@ -7,18 +7,17 @@
 </p>
 
 ## KLINIK App
-Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien masuk klinik dan sekarang di minggu sekarang kami sudah memiliki beberapa update konten sudah memiliki yang berisi:
+Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien masuk klinik dan sekarang di <h6> minggu ke 9 </h6> sekarang kami sudah memiliki beberapa update konten sudah memiliki yang berisi:
 ###  Fitur-fitur yang sudah ada
 - halaman registrasi / pendaftaran
 - halaman login untuk akun yang sudah dibuat
 - dashboard
 - data pasien
+- menambah pasien dalam bentuk foto ataupun tidak
 - dll
 ### fitur tambahan
-- menambah pasien
-- dalam menambah pasien kita juga dapat menambah foto
-aplikasi ini masih di tahap pengembangan dan diusahakan untuk menambah konten terbaru.
-
+- dapat menghapus data
+- dapat mengedit data
 
 
 
