@@ -64,9 +64,11 @@ class PasienController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    /**zaidan */
     public function edit(string $id)
     {
-        //
+        $data['pasien'] = \App\Models\Pasien::findOrFail($id);
+        return view('pasien_edit', $data);
     }
 
     /**
@@ -80,8 +82,11 @@ class PasienController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    /**zaidan */
     public function destroy(string $id)
     {
-        //
+        $pasien = \App\Models\Pasien::findOrFail($id);
+        $pasien->delete();
+        return back()->with('pesan', 'Data sudah dihapus');
     }
 }

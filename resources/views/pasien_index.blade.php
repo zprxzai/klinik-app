@@ -40,10 +40,20 @@
                                             <td>{{ $item->umur }}</td>
                                             <?php $foto=$item->foto ? $item->foto : '0.jpg' ?>
                                             <td><img src="{{ $item->foto ? asset('storage/images/' . $item->foto) : asset('storage/images/0.jpg') }}" alt="0.jpg" width="70px" style="aspect-ratio: 1/1"></td>
-                                            <td>{{ $item->alamat }}</td>
-                                            <td>
-                                                <button type="button" class="btn btn-warning">Edit</button>
-                                                <button type="button" class="btn btn-danger">Remove</button>
+                                                <td>{{ $item->alamat }}</td>
+                                                <td>
+                                                    <a href="/pasien/{{ $item->id }}/edit" class="btn btn-warning btn-sm ml-2">
+                                                        Edit
+                                                    </a>
+                                                    <form action="/pasien/{{ $item->id }}" method="post" class="d-inline">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger btn-sm ml-2"
+                                                            onclick="return confirm('Yakin ingin menghapus data?')">
+                                                            Hapus
+                                                        </button>
+                                                    </form>
+                                                </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
