@@ -38,8 +38,8 @@
                                             </td>
                                             <td>{{ $item->jenis_kelamin }}</td>
                                             <td>{{ $item->umur }}</td>
-                                            <?php $foto=$item->foto ? $item->foto : '0.png' ?>
-                                            <td><img src="{{ $item->foto ? asset('storage/images/' . $item->foto) : asset('storage/images/0.png') }}" alt="0.png" width="70px" style="aspect-ratio: 1/1"></td>
+                                            <?php $foto=$item->foto ? $item->foto : '0.jpg' ?>
+                                            <td><img src="{{ $item->foto ? asset('storage/images/' . $item->foto) : asset('storage/images/0.jpg') }}" alt="0.jpg" width="70px" style="aspect-ratio: 1/1"></td>
                                             <td>{{ $item->alamat }}</td>
                                             <td>
                                                 <button type="button" class="btn btn-warning">Edit</button>
