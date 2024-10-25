@@ -32,18 +32,26 @@ class PasienController extends Controller
     public function store(Request $request)
     {
         $requestData = $request->validate([
-            'no_pasien' => 'required|unique:pasiens,no_pasien',
-            'nama' => 'required',
-            'umur' => 'required|numeric',
+            'no_pasien'     => 'required|unique:pasiens,no_pasien',
+            'nama'          => 'required',
+            'umur'          => 'required|numeric',
             'jenis_kelamin' => 'required|in:laki-laki,perempuan',
-            'alamat' => 'nullable',
-            'foto' => 'required|image|mimes:jpeg,png,jpg|max:5000',
+            'alamat'        => 'nullable',
+            'foto'          => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $pasien = new \App\Models\Pasien(); //membuat objek kosong
-        $pasien->fill($requestData); //mengisi objek dengan data yang sudah divalidasi requestData
-        $pasien->foto = $request->file('foto')->store('public'); //mengisi objek dengan pathFoto
+        $pasien = new \App\Models\Pasien();
+        $pasien->no_pasien = $requestData['no_pasien'];
+        $pasien->nama = $requestData['nama'];
+        $pasien->umur = $requestData['umur'];
+        $pasien->jenis_kelamin = $requestData['jenis_kelamin'];
+        $pasien->alamat = $requestData['alamat'];
+        if ($request->hasFile('foto')) {
+            $fotoName = time().'.'.$request->foto->extension();
+            $request->file('foto')->storeAs('public/images', $fotoName);
+            $pasien->foto = $fotoName;
+        }
         $pasien->save();
-        return back()->with('pesan', 'Data sudah disimpan');
+        return redirect('/pasien')->with('pesan', 'Data sudah disimpan');
     }
     /**
      * Display the specified resource.
