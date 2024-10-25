@@ -6,8 +6,8 @@ Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien m
 - dashboard
 - data pasien
 - menambah pasien dalam bentuk foto ataupun tidak
-- dll
-### fitur tambahan
 - dapat menghapus data
 - dapat mengedit data
+### fitur tambahan / update
+- Perubahan Layout halaman
 
