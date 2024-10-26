@@ -1,5 +1,5 @@
 <div>
-    @extends('layouts.app', ['title' => 'Data Pasien'])
+    @extends('layouts.app_modern', ['title' => 'Data Pasien'])
     @section('content')
         <div class="container">
             <div class="row justify-content-center">
