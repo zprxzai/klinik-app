@@ -65,7 +65,7 @@ class PoliController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // Novan Nur Zulhilmi Yardana XIU4
+        // zaidan pasya
         $requestData = $request -> validate([
             'nama'      => 'required',
             'biaya'     => 'required|numeric',
@@ -81,7 +81,7 @@ class PoliController extends Controller
      * Remove the specified resource from storage.
      */
 
-    // Novan Nur Zulhilmi Yardana XIU4
+    // zaidan pasya
     public function destroy(string $id)
     {
         $poli            = \App\Models\Poli::findOrFail($id);
