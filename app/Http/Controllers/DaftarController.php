@@ -12,10 +12,15 @@ class DaftarController extends Controller
      */
     public function index()
     {
-        $daftar = \App\Models\Daftar::orderBy('pasien_id')->paginate(10);
-        $data ['daftar'] = $daftar;
-        return view('daftar_index', $data);
+        if (request()->has('q')) {
+            $daftar = \App\Models\Daftar::search(request('q'))->paginate(20);
+        } else {
+            $daftar = \App\Models\Daftar::with('pasien')->latest()->paginate(20);
+        }
+        
+        return view('daftar_index', compact('daftar'));
     }
+
 
     /**
      * Show the form for creating a new resource.
