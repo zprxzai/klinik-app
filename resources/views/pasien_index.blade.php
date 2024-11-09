@@ -18,7 +18,7 @@
                                     </form>
                                 </div>
                                 <div class="col-md-3">
-                                    <a href="/daftar/create" class="btn btn-primary btn-md float-end">Tambah Data</a>
+                                    <a href="/pasien/create" class="btn btn-primary btn-md float-end">Tambah Data</a>
                                 </div>
                             </div>
                             <table class="table table-striped" style="background-color:black;">

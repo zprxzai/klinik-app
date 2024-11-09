@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Poli;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PoliController extends Controller
 {
@@ -12,10 +12,9 @@ class PoliController extends Controller
      */
     public function index()
     {
-        $poli = \App\Models\Poli::orderBy('nama', 'DESC')->paginate(10);
+        $poli = \App\Models\Poli::orderBy('nama', 'ASC')->paginate(10);
         $data['poli'] = $poli;
-        return view ('poli_index', $data);
-        // Novan Nur Zulhilmi Yardana XIU4
+        return view('poli_index', $data);
     }
 
     /**
@@ -23,7 +22,7 @@ class PoliController extends Controller
      */
     public function create()
     {
-        return view ('poli_create');
+        return view('poli_create');
     }
 
     /**
@@ -31,33 +30,32 @@ class PoliController extends Controller
      */
     public function store(Request $request)
     {
-        $requestData = $request -> validate([
-            'nama'      => 'required',
-            'biaya'      => 'required|numeric',
+        $requestData = $request->validate([
+            'nama'          => 'required',
+            'biaya'         => 'required|numeric',
         ]);
         $poli = new \App\Models\Poli();
-        $poli -> nama   = $requestData['nama'];
-        $poli -> biaya  = $requestData['biaya'];
-        $poli -> save();
-        return redirect ('/poli') -> with ('pesan', 'Data Berhasil Tersimpan');
+        $poli->nama = $requestData['nama'];
+        $poli->biaya = $requestData['biaya'];
+        $poli->save();
+        return redirect('/poli')->with('pesan', 'Data sudah disimpan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Poli $poli)
+    public function show(string $id)
     {
         //
     }
 
     /**
-     * Show the form for editing the specified resouwrce.
+     * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
         $data['poli'] = \App\Models\Poli::findOrFail($id);
-        return view ('poli_edit', $data);
-        // Novan Nur Zulhilmi Yardana XIU4
+        return view('poli_edit', $data);
     }
 
     /**
@@ -65,27 +63,24 @@ class PoliController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // zaidan pasya
-        $requestData = $request -> validate([
-            'nama'      => 'required',
-            'biaya'     => 'required|numeric',
+        $requestData = $request->validate([
+            'nama'          => 'required|min:2',
+            'biaya'          => 'required|numeric',
         ]);
         $poli = \App\Models\Poli::findOrFail($id);
-        $poli -> nama   = $requestData['nama'];
-        $poli -> biaya  = $requestData['biaya'];
-        $poli -> save();
-        return redirect ('/poli') -> with ('pesan', 'Data Berhasil Tersimpan');
+        $poli->nama = $requestData['nama'];
+        $poli->biaya = $requestData['biaya'];
+        $poli->save();
+        return redirect('/poli')->with('pesan', 'Data sudah diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-
-    // zaidan pasya
     public function destroy(string $id)
     {
-        $poli            = \App\Models\Poli::findOrFail($id);
-        $poli           -> delete();
-        return back()   -> with ('pesan', 'Data berhasil dihapus');
+        $poli = \App\Models\Poli::findOrFail($id);
+        $poli->delete();
+        return redirect('/poli')->with('pesan', 'Data sudah dihapus');
     }
 }
