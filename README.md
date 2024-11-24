@@ -25,10 +25,14 @@ Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien m
 
 ### Data Pendaftaran
 - Lihat Data Pendaftaran
+- Tambah Data Pendaftaran
+- Delete Data Pendaftaran
 - fitur search
 
 ## Fitur yang diupdate :
-- Tambah Data Pendaftaran
-- Delete Data Pendaftaran
+- Detail Data Pendaftaran
+- Edit Hasil Diagnosis Dan Tindakan
 
+## Hasil:
+<a>https://docs.google.com/presentation/d/1RXfB6LLjp0XFVQwtdeAbGjJ4sX0wZiWU2f5SRjXQAoU/edit?usp=sharing</a>
 
