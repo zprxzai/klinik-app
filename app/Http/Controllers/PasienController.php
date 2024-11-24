@@ -113,6 +113,13 @@ class PasienController extends Controller
     public function destroy(string $id)
     {
         $pasien = \App\Models\Pasien::findOrFail($id);
+       if ($pasien->daftar->count() > 0) {
+           //flash('danger', 'Data tidak dapat dihapus, karena sudah terdaftar di daftar pasien')->error();
+           return redirect('/pasien');
+       }
+       if (Storage::exists('public/images/' . $pasien->foto)){
+            Storage::delete('/public/images/' . $pasien->foto);
+        }
         $pasien->delete();
         return redirect('/pasien')->with('pesan', 'Data sudah dihapus');
     }

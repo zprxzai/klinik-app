@@ -1,4 +1,4 @@
-{{-- Novan Nur Zulhilmi Yardana --}}
+
 @extends('layouts.app_modern', ['title' => 'Tambah Data Poli'])
 @section('content')
     <div class="container">
@@ -16,7 +16,7 @@
                                     id="nama" name="nama" value="{{ old('nama') }}">
                                 <span class="text-danger">{{ $errors->first('nama') }}</span>
                             </div>
-                            {{-- // Novan Nur Zulhilmi Yardana XIU4 --}}
+                            
                             <div class="form-group mt-1 mb-3">
                                 <label for="biaya">Biaya</label>
                                 <input type="number" class="form-control @error('biaya') is-invalid @enderror"
