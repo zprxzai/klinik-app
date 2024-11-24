@@ -28,6 +28,9 @@ Klinik app merupakan sebuah aplikasi berbasis website untuk pendaftaran pasien m
 - Edit Data Poli
 - Delete Data Poli
 
-## Fitur yang diupdate :
 ### Data Pendaftaran
 - Lihat Data Pendaftaran
+
+## Fitur yang diupdate :
+- Fitur Search Pasien
+- Fitur Search Poli
