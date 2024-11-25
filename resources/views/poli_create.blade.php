@@ -1,4 +1,3 @@
-{{-- Novan Nur Zulhilmi Yardana --}}
 @extends('layouts.app_modern', ['title' => 'Tambah Data Poli'])
 @section('content')
     <div class="container">
